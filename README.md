@@ -15,3 +15,5 @@ pngBatchToMat.m => converts multiple images to a matrix representation
 RunLogRegr.m => run this file. classifies according to logistic regression
 trainLogRegr.m => trains a logistic regression model
 predictLogRegr.m => classifies the objects acc to trained model
+getError.m => get error percentage on predicted values
+sigmoid.m => calculates sigmoid of a matrix

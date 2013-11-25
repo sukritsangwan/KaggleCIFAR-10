@@ -5,6 +5,8 @@ function predictions = predictLogRegr(X, theta)
 
 predictions = zeros(size(X,1), 1);
 h = sigmoid(X * theta);
-predictions = (h >= 0.5);
+
+[temp, preds] = max(h');
+predictions = preds';
 
 end

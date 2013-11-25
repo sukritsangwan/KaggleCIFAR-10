@@ -4,11 +4,8 @@ function theta = trainLogRegr(X, y, initialTheta, lambda, alpha)
 % X => training data m * (n+1)
 % y => m * 1
 
-% initialize theta
-if(~initialTheta)
-	initialTheta = zeros(size(X, 2), 1);
 
 % we are doing mini-batch gradient descent
-theta = initialTheta - (alpha / size(X, 1)) * X' * (sigmoid(X) - y);
+theta = initialTheta - (alpha / size(X, 1)) * X' * (sigmoid(X * initialTheta) - y);
 
 end

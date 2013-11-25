@@ -1,10 +1,14 @@
 function X = pngBatchToMat(sampleNumbers)
 % return a vector representation of the png file
 
+X = [];
+
 for i = sampleNumbers,
-	fileName = 'train/' + i + '.png';
-	[R, G, B] = imread(fileName);
-	X = [X ((R + G + B)'(:))'];
+	fileName = strcat('train/', mat2str(i), '.png');
+	pix = imread(fileName);
+	X = [X; ((sum(pix, 3))'(:))'];
 end
+
+X = [ones(size(X, 1), 1) X];
 
 end
